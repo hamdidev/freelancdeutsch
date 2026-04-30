@@ -1,0 +1,38 @@
+{
+    "seo": {
+        "title": "FreelancDeutsch — Break into the German Market",
+        "description": "German business language coach, GoBD-compliant documents and AI job applications for international freelancers."
+    },
+    "accessibility": {
+        "skip_to_content": "Skip to content",
+        "toggle_language": "Toggle language"
+    },
+    "nav": {
+        "login": "Login"
+    },
+    "cta": {
+        "register_free": "Get started free"
+    },
+    "hero": {
+        "title": "Break into the <highlight>German market</highlight>"
+    },
+    "features": {
+        "language_coach": {
+            "title": "Language Coach",
+            "desc": "B2B German vocabulary with spaced repetition and AI writing evaluation for IT, Legal and Finance."
+        },
+        "documents": {
+            "title": "Documents",
+            "desc": "GoBD-compliant invoices, proposals and contracts with SHA-256 audit chains."
+        },
+        "jobs": {
+            "title": "Job Market",
+            "desc": "Remote German tech jobs with AI-powered cover letter generation in formal German."
+        }
+    },
+    "footer": {
+        "impressum": "Imprint",
+        "privacy": "Privacy Policy",
+        "compliance": "GDPR-compliant · Data stored in Germany"
+    }
+}

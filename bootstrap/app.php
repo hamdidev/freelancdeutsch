@@ -1,26 +1,32 @@
 <?php
 
+use App\Http\Middleware\CheckFeatureLimit;
+use App\Http\Middleware\EnsureOnboardingComplete;
+use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\SetSecurityHeaders;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
-        web: __DIR__ . '/../routes/web.php',
-        commands: __DIR__ . '/../routes/console.php',
+        web: __DIR__.'/../routes/web.php',
+        commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
-            \App\Http\Middleware\HandleInertiaRequests::class,
-            \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            HandleInertiaRequests::class,
+            AddLinkHeadersForPreloadedAssets::class,
+            SetSecurityHeaders::class,
         ]);
         $middleware->alias([
-            'onboarding'    => \App\Http\Middleware\EnsureOnboardingComplete::class,
-            'feature.limit' => \App\Http\Middleware\CheckFeatureLimit::class,
+            'onboarding' => EnsureOnboardingComplete::class,
+            'feature.limit' => CheckFeatureLimit::class,
         ]);
 
-        $middleware->appendToGroup('web', \App\Http\Middleware\EnsureOnboardingComplete::class);
+        $middleware->appendToGroup('web', EnsureOnboardingComplete::class);
         $middleware->preventRequestForgery(except: [
             'stripe/webhook',
         ]);

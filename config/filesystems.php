@@ -59,6 +59,11 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'gobd' => [
+            'driver' => 'local',
+            'root' => storage_path('app/gobd'),
+            'visibility' => 'private',
+        ],
 
     ],
 

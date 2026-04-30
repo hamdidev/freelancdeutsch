@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Billing;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Laravel\Cashier\Http\Controllers\WebhookController as CashierWebhookController;
+use Symfony\Component\HttpFoundation\Response;
 
-class WebhookController extends Controller
+class WebhookController extends CashierWebhookController
 {
     // Fired when checkout completes — set the plan on the user
-    public function handleCheckoutSessionCompleted(array $payload): \Symfony\Component\HttpFoundation\Response
+    public function handleCheckoutSessionCompleted(array $payload): Response
     {
-        $session  = $payload['data']['object'];
+        $session = $payload['data']['object'];
         $metadata = $session['metadata'] ?? [];
 
         if (isset($metadata['plan']) && isset($session['customer'])) {
@@ -23,7 +23,7 @@ class WebhookController extends Controller
     }
 
     // Fired when subscription is cancelled at period end
-    public function handleCustomerSubscriptionDeleted(array $payload): \Symfony\Component\HttpFoundation\Response
+    public function handleCustomerSubscriptionDeleted(array $payload): Response
     {
         $stripeCustomerId = $payload['data']['object']['customer'];
 
@@ -34,7 +34,7 @@ class WebhookController extends Controller
     }
 
     // Fired on successful renewal
-    public function handleInvoicePaymentSucceeded(array $payload): \Symfony\Component\HttpFoundation\Response
+    public function handleInvoicePaymentSucceeded(array $payload): Response
     {
         // Optionally send a receipt email here via a queued job
         return $this->successMethod();

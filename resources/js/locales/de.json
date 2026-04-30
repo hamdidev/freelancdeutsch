@@ -1,0 +1,38 @@
+{
+    "seo": {
+        "title": "FreelancDeutsch — Break into the German Market",
+        "description": "Sprachcoach, GoBD-konforme Dokumente und KI-gestützte Bewerbungen für internationale Freelancer."
+    },
+    "accessibility": {
+        "skip_to_content": "Zum Inhalt springen",
+        "toggle_language": "Sprache wechseln"
+    },
+    "nav": {
+        "login": "Login"
+    },
+    "cta": {
+        "register_free": "Kostenlos starten"
+    },
+    "hero": {
+        "title": "Break into the <highlight>German market</highlight>"
+    },
+    "features": {
+        "language_coach": {
+            "title": "Sprachcoach",
+            "desc": "B2B-Deutsch mit Spaced Repetition und KI-Schreibbewertung für IT, Recht und Finanzen."
+        },
+        "documents": {
+            "title": "Dokumente",
+            "desc": "GoBD-konforme Rechnungen, Angebote und Verträge mit SHA-256 Prüfkette."
+        },
+        "jobs": {
+            "title": "Stellenmarkt",
+            "desc": "Remote-Stellen bei deutschen Unternehmen mit KI-Bewerbungsschreiben auf Deutsch."
+        }
+    },
+    "footer": {
+        "impressum": "Impressum",
+        "privacy": "Datenschutz",
+        "compliance": "DSGVO-konform · Daten in Deutschland"
+    }
+}

@@ -14,7 +14,7 @@ class UsageCounter extends Model
     {
         return static::where('user_id', $userId)
             ->where('feature', $feature)
-            ->where('period', now()->startOfMonth()->toDateString())
+            ->whereDate('period', now()->startOfMonth())
             ->value('count') ?? 0;
     }
 
@@ -24,7 +24,7 @@ class UsageCounter extends Model
             [
                 'user_id' => $userId,
                 'feature' => $feature,
-                'period'  => now()->startOfMonth()->toDateString(),
+                'period' => now()->startOfMonth()->startOfDay(),
             ],
             ['count' => 0]
         )->increment('count');

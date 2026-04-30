@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.3",
         "barryvdh/laravel-dompdf": "^3.1",
+        "doctrine/dbal": "^4.4",
         "inertiajs/inertia-laravel": "^3.0",
         "laravel/cashier": "^16.5",
         "laravel/framework": "^13.0",
@@ -20,9 +21,10 @@
         "spatie/laravel-data": "^4.21",
         "spatie/laravel-medialibrary": "^11.21",
         "spatie/laravel-permission": "^7.2",
-        "tightenco/ziggy": "^2.0"
+        "tightenco/ziggy": "^2.6"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.7",
         "fakerphp/faker": "^1.23",
         "laravel/boost": "^2.0",
         "laravel/breeze": "^2.4",
@@ -53,6 +55,10 @@
             "@php artisan migrate --force",
             "npm install --ignore-scripts",
             "npm run build"
+        ],
+        "post-update-cmd": [
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
