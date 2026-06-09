@@ -10,10 +10,9 @@ use Inertia\Response;
 
 class DashboardController extends Controller
 {
-    public function __invoke(SpacedRepetition $srs): Response
+    public function __invoke(SpacedRepetition $srs, UsageLimiter $limiter): Response
     {
         $user = auth()->user();
-        $limiter = new UsageLimiter($user);
 
         return Inertia::render('Dashboard', [
             'user' => $user->only([

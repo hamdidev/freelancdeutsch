@@ -9,13 +9,13 @@ use App\Http\Controllers\Documents\DocumentController;
 use App\Http\Controllers\Jobs\ApplicationController;
 use App\Http\Controllers\Jobs\CvProfileController;
 use App\Http\Controllers\Jobs\JobController;
+use App\Http\Controllers\Jobs\JobSyncController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\Language\ReviewController;
 use App\Http\Controllers\Language\VocabularyController;
 use App\Http\Controllers\Language\WritingController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\ProfileController;
-use App\Services\Jobs\JobAggregator;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', LandingController::class)->name('home');
@@ -116,12 +116,7 @@ Route::middleware(['auth', 'verified'])->prefix('language')->name('language.')->
         ->middleware('feature.limit:ai_writing');
 });
 
-Route::post('/jobs/sync', function () {
-    $aggregator = app(JobAggregator::class);
-    $results = $aggregator->sync();
-
-    return back()->with('status', "Synced {$results['total']} jobs.");
-})->middleware(['auth'])->name('jobs.sync');
+Route::post('/jobs/sync', JobSyncController::class)->middleware(['auth'])->name('jobs.sync');
 Route::view('/impressum', 'legal.impressum')->name('impressum');
 Route::view('/datenschutz', 'legal.datenschutz')->name('datenschutz');
 Route::view('/agb', 'legal.agb')->name('agb');

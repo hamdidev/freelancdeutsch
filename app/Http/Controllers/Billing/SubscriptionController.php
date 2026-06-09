@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
+use Laravel\Cashier\Cashier;
 
 class SubscriptionController extends Controller
 {
@@ -48,8 +49,25 @@ class SubscriptionController extends Controller
 
     public function success(Request $request): Response
     {
+        $plan = auth()->user()->plan;
+
+        if ($request->filled('session_id')) {
+            try {
+                $session = Cashier::stripe()
+                    ->checkout->sessions->retrieve($request->session_id);
+                $newPlan = $session->metadata->plan ?? null;
+
+                if ($newPlan && $newPlan !== $plan) {
+                    auth()->user()->update(['plan' => $newPlan]);
+                    $plan = $newPlan;
+                }
+            } catch (\Exception) {
+                // Fall through to the DB value
+            }
+        }
+
         return Inertia::render('Billing/Success', [
-            'plan' => auth()->user()->plan,
+            'plan' => $plan,
         ]);
     }
 

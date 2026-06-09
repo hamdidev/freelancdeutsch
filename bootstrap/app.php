@@ -22,7 +22,6 @@ return Application::configure(basePath: dirname(__DIR__))
             SetSecurityHeaders::class,
         ]);
         $middleware->alias([
-            'onboarding' => EnsureOnboardingComplete::class,
             'feature.limit' => CheckFeatureLimit::class,
         ]);
 

@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class CheckFeatureLimit
 {
+    public function __construct(private UsageLimiter $limiter) {}
+
     public function handle(Request $request, Closure $next, string $feature): mixed
     {
-        $limiter = new UsageLimiter($request->user());
-
-        if (! $limiter->can($feature)) {
+        if (! $this->limiter->can($feature)) {
             if ($request->expectsJson()) {
                 return response()->json([
                     'message' => 'You have reached your monthly limit for this feature.',

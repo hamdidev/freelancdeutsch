@@ -51,13 +51,23 @@ class ApplicationController extends Controller
 
         $cv = CvProfile::findOrFail($request->cv_profile_id);
 
-        // Ensure CV belongs to user
         abort_if($cv->user_id !== auth()->id(), 403);
 
-        $application = Application::firstOrCreate(
-            ['user_id' => auth()->id(), 'job_id' => $job->id],
-            ['cv_profile_id' => $cv->id, 'status' => 'draft']
-        );
+        $existing = Application::where('user_id', auth()->id())
+            ->where('job_id', $job->id)
+            ->first();
+
+        if ($existing) {
+            return redirect()->route('applications.show', $existing)
+                ->with('status', 'You already have an application for this job.');
+        }
+
+        $application = Application::create([
+            'user_id' => auth()->id(),
+            'job_id' => $job->id,
+            'cv_profile_id' => $cv->id,
+            'status' => 'draft',
+        ]);
 
         // Generate adapted CV + cover letter
         $adaptedCv = $this->cvAdaptor->adapt($cv, $job);

@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\UsageLimiter;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
-use Tighten\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -35,10 +35,8 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'auth' => [
-                'user'  => $user,
-                // 'usage' => $user
-                //     ? (new \App\Services\UsageLimiter($user))->summary()
-                //     : null,
+                'user' => $user,
+                'usage' => $user ? app(UsageLimiter::class)->summary() : null,
             ],
         ];
     }

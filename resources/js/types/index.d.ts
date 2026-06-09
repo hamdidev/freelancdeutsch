@@ -11,11 +11,17 @@ export interface User {
     german_level: string | null;
 }
 
+export interface UsageFeature {
+    remaining: number | 'unlimited';
+    can: boolean;
+}
+
 export type PageProps<
     T extends Record<string, unknown> = Record<string, unknown>,
 > = T & {
     auth: {
         user: User;
+        usage: Record<string, UsageFeature> | null;
     };
     ziggy: Config & { location: string };
 };
