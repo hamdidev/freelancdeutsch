@@ -38,10 +38,10 @@
     Oder bleiben Sie kostenlos — Ihr Limit wird am ersten des nächsten Monats zurückgesetzt.
 
     Mit freundlichen Grüßen,
-    Das FreelancDeutsch Team
+    Das JobNomade Team
 
     @component('mail::subcopy')
-        Sie erhalten diese E-Mail, weil Sie ein kostenloses FreelancDeutsch-Konto haben.
+        Sie erhalten diese E-Mail, weil Sie ein kostenloses JobNomade-Konto haben.
         Diese Nachricht ist transaktional und informiert Sie über Ihren Kontostand.
     @endcomponent
 @endcomponent

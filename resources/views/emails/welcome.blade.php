@@ -2,10 +2,10 @@
     @if ($user)
         # Willkommen, {{ $user->name }} 👋
     @else
-        # Willkommen bei FreelancDeutsch 👋
+        # Willkommen bei JobNomade 👋
     @endif
 
-    Schön, dass Sie dabei sind. FreelancDeutsch hilft Ihnen, den deutschen Markt
+    Schön, dass Sie dabei sind. JobNomade hilft Ihnen, den deutschen Markt
     als internationaler Freelancer zu erschließen.
 
     **Was Sie jetzt tun können:**
@@ -38,10 +38,10 @@
     @endcomponent
 
     Mit freundlichen Grüßen,
-    Das FreelancDeutsch Team
+    Das JobNomade Team
 
     @component('mail::subcopy')
-        Sie erhalten diese E-Mail, weil Sie sich bei FreelancDeutsch registriert haben.
+        Sie erhalten diese E-Mail, weil Sie sich bei JobNomade registriert haben.
         Diese E-Mail ist transaktional und kann nicht abgemeldet werden.
     @endcomponent
 @endcomponent

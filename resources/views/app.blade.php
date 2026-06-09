@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#09090b">
+    <meta name="theme-color" content="#080c18">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -12,15 +15,15 @@
     <!-- SEO -->
     <title inertia>{{ config('app.name') }}</title>
     <meta name="description"
-        content="FreelancDeutsch — German business language coach, GoBD-compliant document generator, and job market intelligence for international freelancers.">
+        content="JobNomade — German business language coach, GoBD-compliant document generator, and job market intelligence for international freelancers.">
     <meta name="keywords"
         content="German freelancer, Rechnung erstellen, GoBD, DSGVO, German business German, international developer Germany">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="FreelancDeutsch">
-    <meta property="og:title" content="FreelancDeutsch — Break into the German market">
+    <meta property="og:site_name" content="JobNomade">
+    <meta property="og:title" content="JobNomade — Break into the German market">
     <meta property="og:description"
         content="German business language coach, GoBD-compliant invoicing, and remote job board for international freelancers.">
     <meta property="og:url" content="{{ url()->current() }}">

@@ -43,7 +43,7 @@ export default function Onboarding({ user }: Props) {
 
     return (
         <>
-            <Head title="Welcome to FreelancDeutsch" />
+            <Head title="Welcome to JobNomade" />
 
             <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
                 <div className="w-full max-w-lg bg-white rounded-2xl shadow-sm border border-gray-100 p-8">

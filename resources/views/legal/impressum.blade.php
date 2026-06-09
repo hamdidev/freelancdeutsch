@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Impressum — FreelancDeutsch</title>
+    <title>Impressum — JobNomade</title>
     <style>
         body {
             font-family: system-ui, sans-serif;
@@ -41,7 +41,7 @@
 </head>
 
 <body>
-    <a href="/" class="back">← FreelancDeutsch</a>
+    <a href="/" class="back">← JobNomade</a>
     <h1>Impressum</h1>
 
     <h2>Angaben gemäß § 5 TMG</h2>
@@ -54,7 +54,7 @@
 
     <h2>Kontakt</h2>
     <p>
-        E-Mail: hello@freelancdeutsch.com
+        E-Mail: hello@jobnomade.com
     </p>
 
     <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>

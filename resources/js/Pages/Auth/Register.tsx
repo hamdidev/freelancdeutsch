@@ -29,7 +29,7 @@ export default function Register() {
                     <span className="w-1.5 h-5 rounded-sm bg-red-600" />
                     <span className="w-1.5 h-5 rounded-sm bg-amber-400" />
                 </div>
-                <span className="font-semibold text-sm tracking-tight text-zinc-900">FreelancDeutsch</span>
+                <span className="font-semibold text-sm tracking-tight text-zinc-900">JobNomade</span>
             </Link>
 
             <div className="w-full max-w-sm bg-white border border-zinc-200 rounded-2xl p-8 shadow-sm">

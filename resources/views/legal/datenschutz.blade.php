@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Datenschutzerklärung — FreelancDeutsch</title>
+    <title>Datenschutzerklärung — JobNomade</title>
     <style>
         body {
             font-family: system-ui, sans-serif;
@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <a href="/" class="back">← FreelancDeutsch</a>
+    <a href="/" class="back">← JobNomade</a>
     <h1>Datenschutzerklärung</h1>
 
     <h2>1. Datenverarbeitung</h2>
@@ -47,7 +47,7 @@
     </p>
 
     <h2>2. Verantwortlicher</h2>
-    <p>[Ihr Name], E-Mail: hello@freelancdeutsch.com</p>
+    <p>[Ihr Name], E-Mail: hello@jobnomade.com</p>
 
     <h2>3. Erhobene Daten</h2>
     <p>
@@ -72,7 +72,7 @@
     <h2>6. Ihre Rechte</h2>
     <p>
         Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Datenübertragbarkeit.
-        Kontaktieren Sie uns unter hello@freelancdeutsch.com.
+        Kontaktieren Sie uns unter hello@jobnomade.com.
     </p>
 
     <h2>7. Cookies</h2>

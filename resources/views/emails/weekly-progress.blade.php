@@ -22,5 +22,5 @@
     @endcomponent
 
     Mit freundlichen Grüßen,
-    Das FreelancDeutsch Team
+    Das JobNomade Team
 @endcomponent

@@ -156,7 +156,7 @@ export default function AuthenticatedLayout({ children }: Props) {
                                     <span className="w-1.5 h-5 rounded-sm bg-amber-400" />
                                 </div>
                                 <span className="text-white font-semibold text-sm tracking-tight">
-                                    FreelancDeutsch
+                                    JobNomade
                                 </span>
                             </Link>
 

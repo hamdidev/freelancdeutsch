@@ -157,7 +157,7 @@ export default function Landing() {
     const structuredData = {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'FreelancDeutsch',
+        name: 'JobNomade',
         url: route('home'),
     }
 
@@ -201,7 +201,7 @@ export default function Landing() {
                                 <span className="w-[5px] h-6 rounded-sm bg-red-600" />
                                 <span className="w-[5px] h-5 rounded-sm bg-amber-400 group-hover:bg-amber-300 transition-colors" />
                             </div>
-                            <span className="font-bold text-sm tracking-tight text-white">FreelancDeutsch</span>
+                            <span className="font-bold text-sm tracking-tight text-white">JobNomade</span>
                         </Link>
 
                         <div className="flex items-center gap-3">
@@ -493,7 +493,7 @@ export default function Landing() {
                                 <span className="w-[4px] h-5 rounded-sm bg-red-700" />
                                 <span className="w-[4px] h-4 rounded-sm bg-amber-500" />
                             </div>
-                            <span className="text-sm text-zinc-600">FreelancDeutsch</span>
+                            <span className="text-sm text-zinc-600">JobNomade</span>
                         </div>
                         <div className="flex items-center gap-6 text-xs text-zinc-600">
                             <a href="/impressum" className="hover:text-zinc-300 transition-colors">
