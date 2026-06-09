@@ -1,5 +1,6 @@
 import { Head, Link, useForm } from '@inertiajs/react'
 import { FormEventHandler } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Login({
     status,
@@ -8,6 +9,7 @@ export default function Login({
     status?: string
     canResetPassword: boolean
 }) {
+    const { t } = useTranslation()
     const { data, setData, post, processing, errors, reset } = useForm({
         login: '',
         password: '',
@@ -23,7 +25,7 @@ export default function Login({
 
     return (
         <div className="min-h-screen bg-zinc-50 flex flex-col items-center justify-center px-4">
-            <Head title="Log in" />
+            <Head title={t('auth.login.sign_in')} />
 
             {/* Brand */}
             <Link href={route('home')} className="flex items-center gap-2 mb-8">
@@ -36,8 +38,8 @@ export default function Login({
             </Link>
 
             <div className="w-full max-w-sm bg-white border border-zinc-200 rounded-2xl p-8 shadow-sm">
-                <h1 className="text-xl font-bold text-zinc-900 mb-1">Welcome back</h1>
-                <p className="text-sm text-zinc-500 mb-6">Sign in to your account</p>
+                <h1 className="text-xl font-bold text-zinc-900 mb-1">{t('auth.login.title')}</h1>
+                <p className="text-sm text-zinc-500 mb-6">{t('auth.login.subtitle')}</p>
 
                 {status && (
                     <div className="mb-4 text-sm font-medium text-green-700 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
@@ -48,7 +50,7 @@ export default function Login({
                 <form onSubmit={submit} className="space-y-4">
                     <div>
                         <label htmlFor="login" className="block text-xs font-medium text-zinc-500 mb-1.5">
-                            Email or username
+                            {t('auth.login.email_or_username')}
                         </label>
                         <input
                             id="login"
@@ -67,7 +69,7 @@ export default function Login({
 
                     <div>
                         <label htmlFor="password" className="block text-xs font-medium text-zinc-500 mb-1.5">
-                            Password
+                            {t('auth.login.password')}
                         </label>
                         <input
                             id="password"
@@ -92,7 +94,7 @@ export default function Login({
                                 onChange={(e) => setData('remember', (e.target.checked || false) as false)}
                                 className="w-3.5 h-3.5 rounded border-zinc-300 bg-white text-amber-400 focus:ring-amber-400"
                             />
-                            <span className="text-xs text-zinc-500">Remember me</span>
+                            <span className="text-xs text-zinc-500">{t('auth.login.remember_me')}</span>
                         </label>
 
                         {canResetPassword && (
@@ -100,7 +102,7 @@ export default function Login({
                                 href={route('password.request')}
                                 className="text-xs text-zinc-400 hover:text-zinc-600 transition-colors"
                             >
-                                Forgot password?
+                                {t('auth.login.forgot_password')}
                             </Link>
                         )}
                     </div>
@@ -110,7 +112,7 @@ export default function Login({
                         disabled={processing}
                         className="w-full py-2.5 bg-amber-400 text-zinc-900 text-sm font-bold rounded-lg hover:bg-amber-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {processing ? 'Signing in…' : 'Sign in'}
+                        {processing ? t('auth.login.signing_in') : t('auth.login.sign_in')}
                     </button>
                 </form>
 
@@ -120,7 +122,7 @@ export default function Login({
                         <span className="w-full border-t border-zinc-200" />
                     </div>
                     <div className="relative flex justify-center">
-                        <span className="bg-white px-3 text-xs text-zinc-400">or continue with</span>
+                        <span className="bg-white px-3 text-xs text-zinc-400">{t('auth.login.or_continue_with')}</span>
                     </div>
                 </div>
 
@@ -135,13 +137,13 @@ export default function Login({
                         <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
                         <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
                     </svg>
-                    Sign in with Google
+                    {t('auth.login.sign_in_google')}
                 </a>
 
                 <p className="mt-6 text-center text-xs text-zinc-400">
-                    Don't have an account?{' '}
+                    {t('auth.login.no_account')}{' '}
                     <Link href={route('register')} className="text-zinc-600 hover:text-zinc-900 transition-colors">
-                        Sign up free
+                        {t('auth.login.sign_up_free')}
                     </Link>
                 </p>
             </div>

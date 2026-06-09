@@ -34,5 +34,35 @@
         "impressum": "Impressum",
         "privacy": "Datenschutz",
         "compliance": "DSGVO-konform · Daten in Deutschland"
+    },
+    "auth": {
+        "login": {
+            "title": "Willkommen zurück",
+            "subtitle": "In Ihr Konto einloggen",
+            "email_or_username": "E-Mail oder Benutzername",
+            "password": "Passwort",
+            "remember_me": "Angemeldet bleiben",
+            "forgot_password": "Passwort vergessen?",
+            "sign_in": "Einloggen",
+            "signing_in": "Einloggen…",
+            "or_continue_with": "oder weiter mit",
+            "sign_in_google": "Mit Google einloggen",
+            "no_account": "Noch kein Konto?",
+            "sign_up_free": "Kostenlos registrieren"
+        },
+        "register": {
+            "title": "Konto erstellen",
+            "subtitle": "Kostenlos starten — keine Kreditkarte erforderlich",
+            "full_name": "Vollständiger Name",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "confirm_password": "Passwort bestätigen",
+            "create_account": "Konto erstellen",
+            "creating": "Konto wird erstellt…",
+            "or_continue_with": "oder weiter mit",
+            "sign_up_google": "Mit Google registrieren",
+            "have_account": "Bereits ein Konto?",
+            "sign_in": "Einloggen"
+        }
     }
 }

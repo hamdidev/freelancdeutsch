@@ -1,7 +1,9 @@
 import { Head, Link, useForm } from '@inertiajs/react'
 import { FormEventHandler } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Register() {
+    const { t } = useTranslation()
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
@@ -18,7 +20,7 @@ export default function Register() {
 
     return (
         <div className="min-h-screen bg-zinc-50 flex flex-col items-center justify-center px-4">
-            <Head title="Register" />
+            <Head title={t('auth.register.create_account')} />
 
             {/* Brand */}
             <Link href={route('home')} className="flex items-center gap-2 mb-8">
@@ -31,13 +33,13 @@ export default function Register() {
             </Link>
 
             <div className="w-full max-w-sm bg-white border border-zinc-200 rounded-2xl p-8 shadow-sm">
-                <h1 className="text-xl font-bold text-zinc-900 mb-1">Create an account</h1>
-                <p className="text-sm text-zinc-500 mb-6">Start free — no credit card required</p>
+                <h1 className="text-xl font-bold text-zinc-900 mb-1">{t('auth.register.title')}</h1>
+                <p className="text-sm text-zinc-500 mb-6">{t('auth.register.subtitle')}</p>
 
                 <form onSubmit={submit} className="space-y-4">
                     <div>
                         <label htmlFor="name" className="block text-xs font-medium text-zinc-500 mb-1.5">
-                            Full name
+                            {t('auth.register.full_name')}
                         </label>
                         <input
                             id="name"
@@ -57,7 +59,7 @@ export default function Register() {
 
                     <div>
                         <label htmlFor="email" className="block text-xs font-medium text-zinc-500 mb-1.5">
-                            Email
+                            {t('auth.register.email')}
                         </label>
                         <input
                             id="email"
@@ -76,7 +78,7 @@ export default function Register() {
 
                     <div>
                         <label htmlFor="password" className="block text-xs font-medium text-zinc-500 mb-1.5">
-                            Password
+                            {t('auth.register.password')}
                         </label>
                         <input
                             id="password"
@@ -95,7 +97,7 @@ export default function Register() {
 
                     <div>
                         <label htmlFor="password_confirmation" className="block text-xs font-medium text-zinc-500 mb-1.5">
-                            Confirm password
+                            {t('auth.register.confirm_password')}
                         </label>
                         <input
                             id="password_confirmation"
@@ -117,7 +119,7 @@ export default function Register() {
                         disabled={processing}
                         className="w-full py-2.5 bg-amber-400 text-zinc-900 text-sm font-bold rounded-lg hover:bg-amber-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {processing ? 'Creating account…' : 'Create account'}
+                        {processing ? t('auth.register.creating') : t('auth.register.create_account')}
                     </button>
                 </form>
 
@@ -127,7 +129,7 @@ export default function Register() {
                         <span className="w-full border-t border-zinc-200" />
                     </div>
                     <div className="relative flex justify-center">
-                        <span className="bg-white px-3 text-xs text-zinc-400">or continue with</span>
+                        <span className="bg-white px-3 text-xs text-zinc-400">{t('auth.register.or_continue_with')}</span>
                     </div>
                 </div>
 
@@ -142,13 +144,13 @@ export default function Register() {
                         <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
                         <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
                     </svg>
-                    Sign up with Google
+                    {t('auth.register.sign_up_google')}
                 </a>
 
                 <p className="mt-6 text-center text-xs text-zinc-400">
-                    Already have an account?{' '}
+                    {t('auth.register.have_account')}{' '}
                     <Link href={route('login')} className="text-zinc-600 hover:text-zinc-900 transition-colors">
-                        Sign in
+                        {t('auth.register.sign_in')}
                     </Link>
                 </p>
             </div>
